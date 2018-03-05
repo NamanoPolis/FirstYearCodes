@@ -1,0 +1,154 @@
+    #include<iostream>
+    #include<cstring>
+    using namespace std;
+    int a=0;
+
+    void rangoli(int len,char s[])
+    {
+        int i,j,k,a;
+
+        for(i=0;i<9;i++)
+        {
+            if(i==0)
+            {
+                for(j=1;j<9-i;j++)
+                {
+                    cout<<j;
+                }
+            }
+            else
+            {
+                for(j=1;j<=9-i;j++)
+                {
+                    cout<<j;
+                }
+            }
+
+            if(i>=8-len+1)
+            {
+                for(j=0;j<8-len;j++)
+                {
+                    cout<<" ";
+                }
+
+                for(j=0;j<=a;j++)
+                {
+                    cout<<s[j];
+                }
+
+                for(j=j-2;j>=0;j--)
+                {
+                    cout<<s[j];
+                }
+
+                for(j=0;j<8-len;j++)
+                {
+                    cout<<" ";
+                }
+
+                a++;
+            }
+
+            else
+            {
+                for(k=0;k<2*i-1;k++)
+                {
+                    cout<<" ";
+                }
+            }
+
+            for(j=9-i;j>0;j--)
+            {
+                cout<<j;
+            }
+
+            cout<<endl;
+        }
+
+        a--;
+
+        for(i=2;i<=9;i++)
+        {
+            for(j=1;j<=i;j++)
+            {
+                cout<<j;
+            }
+
+            if(i<=len)
+            {
+                for(j=0;j<8-len;j++)
+                {
+                    cout<<" ";
+                }
+
+                for(j=0;j<a;j++)
+                {
+                    cout<<s[j];
+                }
+
+                for(j=j-2;j>=0;j--)
+                {
+                    cout<<s[j];
+                }
+
+                for(j=0;j<8-len;j++)
+                {
+                    cout<<" ";
+                }
+
+                a--;
+            }
+
+            else
+            {
+                for(k=0;k<2*(9-i)-1;k++)
+                {
+                    cout<<" ";
+                }
+            }
+
+            if(i==9)
+            {
+                for(j=i-1;j>0;j--)
+                {
+                    cout<<j;
+                }
+            }
+
+            else
+            {
+                 for(j=i;j>0;j--)
+                {
+                    cout<<j;
+                }
+            }
+
+            cout<<endl;
+        }
+    }
+
+    int main()
+    {
+         int t;
+        int i;
+char arr[100],length;
+        cin>>t;
+        for(i=0;i<t;i++)
+        {
+            cin>>arr;
+
+            length=strlen(arr);
+
+            if(length>7)
+            {
+                cout<<"invalid string\n";
+            }
+
+            else
+            {
+                rangoli(length,arr);
+            }
+        }
+
+        return 0;
+    }
